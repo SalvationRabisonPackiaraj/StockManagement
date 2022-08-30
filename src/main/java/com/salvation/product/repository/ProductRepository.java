@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+
 import com.salvation.product.entity.Products;
 
 public interface ProductRepository extends JpaRepository<Products, Long> {
@@ -19,4 +20,6 @@ public interface ProductRepository extends JpaRepository<Products, Long> {
 	    
 	    @Query(query)
 	    Page<Products> findByProductNameLike(String productNameFilter, Pageable pageable);
+	    
+	    public Products findByProductId(String ProductId);
 }

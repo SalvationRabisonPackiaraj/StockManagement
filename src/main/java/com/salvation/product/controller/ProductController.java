@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.salvation.product.entity.Products;
 import com.salvation.product.service.ProductService;
 
@@ -57,5 +58,17 @@ public class ProductController {
 	 	public ResponseEntity<Products> updateProduct( @RequestBody Products product){
 		 return new ResponseEntity<Products>(service.updateProducts(product), HttpStatus.OK);	 	
 		}
+	 
+	 //   RequestBody passing
+		@PutMapping("/updateproductdetails")
+		public String updateProductDetails(@RequestBody Products products) {
+			return  service.updateProductDetails(products);
 
+}
+		// save the Products
+		@PostMapping("/saveproductdetails")
+		public String saveProductDetails(@RequestBody List<Products> products) {
+			service.saveProductDetails(products);
+			return "Successfully Saved The SalesDetails";
+		}
 }

@@ -21,17 +21,17 @@ public class Products {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	@Column(nullable = false, unique = true)
 	private String productId;
 	@Column(nullable = false, length = 50)
 	private String productName;
 	@Column(nullable = false, length = 50)
-	private String quantity;
+	private int quantity;
 	@Column(nullable = false, length = 50)
 	private String quality;
 	@Column(nullable = false, length = 50)
-	private Long price;
+	private int price;
 	@CreationTimestamp
 	@Column(nullable = false,updatable = false)
 	private LocalDateTime createdAt;
